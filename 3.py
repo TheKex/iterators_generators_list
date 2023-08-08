@@ -3,7 +3,6 @@ class FlatIterator:
     def __init__(self, list_of_list):
         self.list_of_list = list_of_list
 
-
     def __iter__(self):
         self.index = -1
         self.inner_list = []
@@ -35,7 +34,6 @@ class FlatIterator:
 
 
 def test_3():
-
     list_of_lists_2 = [
         [['a'], ['b', 'c']],
         ['d', 'e', [['f'], 'h'], False],
@@ -46,10 +44,10 @@ def test_3():
             FlatIterator(list_of_lists_2),
             ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None, '!']
     ):
-
         assert flat_iterator_item == check_item
 
     assert list(FlatIterator(list_of_lists_2)) == ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None, '!']
+
 
 if __name__ == '__main__':
     test_3()
